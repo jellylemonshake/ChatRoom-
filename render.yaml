@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: chatroom-backend
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        value: mongodb+srv://awsproject:awsproject@awsproject.fvreojm.mongodb.net/?appName=awsproject
+      - key: JDOODLE_CLIENT_ID
+        sync: false
+      - key: JDOODLE_CLIENT_SECRET
+        sync: false 
+
+  - type: static
+    name: awsproject-frontend
+    rootDir: jellylemonshake
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    pullRequestPreviewsEnabled: false
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://awsproject-backend.onrender.com/api
+      - key: REACT_APP_SUPABASE_URL
+        value: https://ocipugzffqkfvavmxzod.supabase.co
+      - key: REACT_APP_SUPABASE_ANON_KEY
+        value: sb_publishable_Rj7rrVb0fjtxsG06ok3kLQ_dLZEfiXA

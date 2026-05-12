@@ -1,0 +1,23 @@
+{
+  "name": "chatroom-backend",
+  "version": "1.0.0",
+  "description": "Backend for ChatRoom application",
+  "main": "backend/index.js",
+  "scripts": {
+    "start": "cd jellylemonshake && npm start",
+    "build": "cd jellylemonshake && npm run build",
+    "install": "cd jellylemonshake && npm install",
+    "dev": "cd backend && npm run dev"
+  },
+  "keywords": [
+    "chatroom",
+    "backend",
+    "express",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "semver": "^7.7.2"
+  }
+}

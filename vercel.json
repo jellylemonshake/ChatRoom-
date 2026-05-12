@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "jellylemonshake/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build",
+        "framework": "create-react-app"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/jellylemonshake/$1"
+    }
+  ]
+}
